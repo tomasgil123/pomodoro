@@ -1,4 +1,5 @@
 import 'src/styles/globals.css'
+import '../../node_modules/react-vis/dist/style.css'
 import PageWithLayoutType from 'src/types/pageWithLayout'
 import React from 'react'
 
