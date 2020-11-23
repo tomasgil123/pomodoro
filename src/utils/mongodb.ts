@@ -1,5 +1,8 @@
 import { MongoClient } from 'mongodb'
 
+//to avoid typescript warnings
+const globalAny: any = global
+
 const { MONGODB_URI, MONGODB_DB } = process.env
 
 if (!MONGODB_URI) {
@@ -15,13 +18,13 @@ if (!MONGODB_DB) {
  * in development. This prevents connections growing exponentiatlly
  * during API Route usage.
  */
-let cached = global.mongo
-if (!cached) cached = global.mongo = {}
+let cached = globalAny.mongo
+if (!cached) cached = globalAny.mongo = {}
 
-export async function connectToDatabase(): void {
+export async function connectToDatabase(): Promise<any> {
   if (cached.conn) return cached.conn
   if (!cached.promise) {
-    const conn = {}
+    const conn: any = {}
     const opts = {
       useNewUrlParser: true,
       useUnifiedTopology: true,

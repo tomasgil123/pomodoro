@@ -1,8 +1,7 @@
 import React, { FC, useEffect } from 'react'
 
+//layout
 import MainLayout from 'src/layouts/main'
-
-import Counter from 'src/components/counter'
 
 //types
 import PageWithLayout from 'src/types/pageWithLayout'
@@ -25,7 +24,6 @@ const Home: FC = () => {
     <div>
       Home
       <button onClick={onSendRequest}>Make request</button>
-      <Counter />
     </div>
   )
 }
