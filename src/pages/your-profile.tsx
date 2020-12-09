@@ -1,7 +1,9 @@
 import React, { FC, useEffect } from 'react'
 
+//layout
 import MainLayout from 'src/layouts/main'
 
+//components
 import Counter from 'src/components/counter'
 
 //types
